@@ -2,8 +2,7 @@
   "name": "logger-js",
   "version": "0.0.1",
   "description": "js logger",
-  "main": "dist/logger-js.min.js",
-  "module": "dist/logger-js.es.js",
+  "main": "dist/logger-js.es.js",
   "unpkg": "dist/logger-js.js",
   "files": [
     "src",
