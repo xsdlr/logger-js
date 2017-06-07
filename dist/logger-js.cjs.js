@@ -71,7 +71,7 @@ class Logger {
     if (level.level >= this.logLevel.level) {
       const f = console[type];
       if (typeof f === 'function') {
-        f.apply(null, args);
+        Function.apply.apply(f, [console, args]);
       }
     }
   }
