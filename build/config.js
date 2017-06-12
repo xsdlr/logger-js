@@ -9,9 +9,10 @@ const uglify = require('rollup-plugin-uglify');
 const uglifyJS = require('uglify-js-harmony');
 const version = process.env.VERSION || require('../package.json').version;
 const moduleName = require('../package.json').name;
+const pkg = require('../package.json');
 
 const banner =
-`/*
+  `/*
  * ${moduleName} v${version}
  * (c) xsdlr
  * Released under the MIT License.
@@ -67,15 +68,18 @@ function genConfig(opts) {
       }),
       flow(),
       resolve(),
-      babel({
+      babel(Object.assign(pkg.babel, {
+        babelrc: false,
         plugins: ['external-helpers'],
         externalHelpers: true,
-        exclude: 'node_modules/**'
-      }),
+        exclude: 'node_modules/**',
+        runtimeHelpers: true,
+        presets: pkg.babel.presets.map(x => (x === 'latest' ? ['latest', { es2015: { modules: false } }] : x)),
+      })),
       progress(),
       filesize()
     ].concat(opts.plugins || [])
-  }
+  };
   return config
 }
 

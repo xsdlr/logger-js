@@ -9,9 +9,12 @@
 /**
  * Created by xsdlr on 2017/4/25.
  */
-let instance = null;
-class Logger {
-  constructor() {
+var instance = null;
+
+var Logger = function () {
+  function Logger() {
+    babelHelpers.classCallCheck(this, Logger);
+
     if (!instance) {
       instance = this;
     }
@@ -30,52 +33,90 @@ class Logger {
    * 设置等级
    * @param level [DEBUG,INFO,WARN,ERROR,OFF]
    */
-  setLevel(level) {
-    this.logLevel = Object.assign({}, this.DEBUG, level);
-  }
 
-  /***
-   * log debug
-   * @param args
-   */
-  debug(...args) {
-    this._log(this.DEBUG, args);
-  }
 
-  /***
-   * log info
-   * @param args
-   */
-  info(...args) {
-    this._log(this.INFO, args);
-  }
+  babelHelpers.createClass(Logger, [{
+    key: 'setLevel',
+    value: function setLevel(level) {
+      this.logLevel = Object.assign({}, this.DEBUG, level);
+    }
 
-  /***
-   * log warn
-   * @param args
-   */
-  warn(...args) {
-    this._log(this.WARN, args);
-  }
+    /***
+     * log debug
+     * @param args
+     */
 
-  /***
-   * log error
-   * @param args
-   */
-  error(...args) {
-    this._log(this.ERROR, args);
-  }
+  }, {
+    key: 'debug',
+    value: function debug() {
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
 
-  _log(level = this.OFF, args) {
-    const type = level.type;
-    if (level.level >= this.logLevel.level) {
-      const f = console[type];
-      if (typeof f === 'function') {
-        Function.apply.apply(f, [console, args]);
+      this._log(this.DEBUG, args);
+    }
+
+    /***
+     * log info
+     * @param args
+     */
+
+  }, {
+    key: 'info',
+    value: function info() {
+      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      this._log(this.INFO, args);
+    }
+
+    /***
+     * log warn
+     * @param args
+     */
+
+  }, {
+    key: 'warn',
+    value: function warn() {
+      for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        args[_key3] = arguments[_key3];
+      }
+
+      this._log(this.WARN, args);
+    }
+
+    /***
+     * log error
+     * @param args
+     */
+
+  }, {
+    key: 'error',
+    value: function error() {
+      for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+        args[_key4] = arguments[_key4];
+      }
+
+      this._log(this.ERROR, args);
+    }
+  }, {
+    key: '_log',
+    value: function _log() {
+      var level = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.OFF;
+      var args = arguments[1];
+
+      var type = level.type;
+      if (level.level >= this.logLevel.level) {
+        var f = console[type];
+        if (typeof f === 'function') {
+          Function.apply.apply(f, [console, args]);
+        }
       }
     }
-  }
-}
+  }]);
+  return Logger;
+}();
 
 var index = new Logger();
 
