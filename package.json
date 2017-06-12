@@ -2,7 +2,8 @@
   "name": "logger-js",
   "version": "0.0.1",
   "description": "js logger",
-  "main": "dist/logger-js.es.js",
+  "main": "dist/logger-js.js",
+  "jsnext:main": "dist/logger-js.es.js",
   "unpkg": "dist/logger-js.js",
   "files": [
     "src",
