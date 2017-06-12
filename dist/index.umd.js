@@ -4,16 +4,21 @@
  * Released under the MIT License.
  */
 
-'use strict';
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('babel-runtime/core-js/object/assign'), require('babel-runtime/helpers/classCallCheck'), require('babel-runtime/helpers/createClass')) :
+	typeof define === 'function' && define.amd ? define(['babel-runtime/core-js/object/assign', 'babel-runtime/helpers/classCallCheck', 'babel-runtime/helpers/createClass'], factory) :
+	(global['logger-js'] = factory(global._Object$assign,global._classCallCheck,global._createClass));
+}(this, (function (_Object$assign,_classCallCheck,_createClass) { 'use strict';
 
-/**
- * Created by xsdlr on 2017/4/25.
- */
+_Object$assign = 'default' in _Object$assign ? _Object$assign['default'] : _Object$assign;
+_classCallCheck = 'default' in _classCallCheck ? _classCallCheck['default'] : _classCallCheck;
+_createClass = 'default' in _createClass ? _createClass['default'] : _createClass;
+
 var instance = null;
 
 var Logger = function () {
   function Logger() {
-    babelHelpers.classCallCheck(this, Logger);
+    _classCallCheck(this, Logger);
 
     if (!instance) {
       instance = this;
@@ -35,10 +40,10 @@ var Logger = function () {
    */
 
 
-  babelHelpers.createClass(Logger, [{
+  _createClass(Logger, [{
     key: 'setLevel',
     value: function setLevel(level) {
-      this.logLevel = Object.assign({}, this.DEBUG, level);
+      this.logLevel = _Object$assign({}, this.DEBUG, level);
     }
 
     /***
@@ -115,9 +120,13 @@ var Logger = function () {
       }
     }
   }]);
+
   return Logger;
 }();
 
 var index = new Logger();
 
-module.exports = index;
+return index;
+
+})));
+//# sourceMappingURL=index.umd.js.map

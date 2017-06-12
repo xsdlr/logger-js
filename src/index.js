@@ -1,6 +1,3 @@
-/**
- * Created by xsdlr on 2017/4/25.
- */
 let instance = null
 class Logger {
   constructor () {

@@ -4,20 +4,19 @@
  * Released under the MIT License.
  */
 
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global['logger-js'] = factory());
-}(this, (function () { 'use strict';
+'use strict';
 
-/**
- * Created by xsdlr on 2017/4/25.
- */
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var _Object$assign = _interopDefault(require('babel-runtime/core-js/object/assign'));
+var _classCallCheck = _interopDefault(require('babel-runtime/helpers/classCallCheck'));
+var _createClass = _interopDefault(require('babel-runtime/helpers/createClass'));
+
 var instance = null;
 
 var Logger = function () {
   function Logger() {
-    babelHelpers.classCallCheck(this, Logger);
+    _classCallCheck(this, Logger);
 
     if (!instance) {
       instance = this;
@@ -39,10 +38,10 @@ var Logger = function () {
    */
 
 
-  babelHelpers.createClass(Logger, [{
+  _createClass(Logger, [{
     key: 'setLevel',
     value: function setLevel(level) {
-      this.logLevel = Object.assign({}, this.DEBUG, level);
+      this.logLevel = _Object$assign({}, this.DEBUG, level);
     }
 
     /***
@@ -119,11 +118,11 @@ var Logger = function () {
       }
     }
   }]);
+
   return Logger;
 }();
 
 var index = new Logger();
 
-return index;
-
-})));
+module.exports = index;
+//# sourceMappingURL=index.js.map

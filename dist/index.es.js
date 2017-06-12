@@ -4,14 +4,15 @@
  * Released under the MIT License.
  */
 
-/**
- * Created by xsdlr on 2017/4/25.
- */
+import _Object$assign from 'babel-runtime/core-js/object/assign';
+import _classCallCheck from 'babel-runtime/helpers/classCallCheck';
+import _createClass from 'babel-runtime/helpers/createClass';
+
 var instance = null;
 
 var Logger = function () {
   function Logger() {
-    babelHelpers.classCallCheck(this, Logger);
+    _classCallCheck(this, Logger);
 
     if (!instance) {
       instance = this;
@@ -33,10 +34,10 @@ var Logger = function () {
    */
 
 
-  babelHelpers.createClass(Logger, [{
+  _createClass(Logger, [{
     key: 'setLevel',
     value: function setLevel(level) {
-      this.logLevel = Object.assign({}, this.DEBUG, level);
+      this.logLevel = _Object$assign({}, this.DEBUG, level);
     }
 
     /***
@@ -113,9 +114,11 @@ var Logger = function () {
       }
     }
   }]);
+
   return Logger;
 }();
 
 var index = new Logger();
 
 export default index;
+//# sourceMappingURL=index.es.js.map
