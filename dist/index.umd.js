@@ -1,5 +1,5 @@
 /*
- * logger-js v0.0.1
+ * log4js-helper v0.0.2
  * (c) xsdlr
  * Released under the MIT License.
  */
@@ -7,7 +7,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('babel-runtime/core-js/object/assign'), require('babel-runtime/helpers/classCallCheck'), require('babel-runtime/helpers/createClass')) :
 	typeof define === 'function' && define.amd ? define(['babel-runtime/core-js/object/assign', 'babel-runtime/helpers/classCallCheck', 'babel-runtime/helpers/createClass'], factory) :
-	(global['logger-js'] = factory(global._Object$assign,global._classCallCheck,global._createClass));
+	(global['log4js-helper'] = factory(global._Object$assign,global._classCallCheck,global._createClass));
 }(this, (function (_Object$assign,_classCallCheck,_createClass) { 'use strict';
 
 _Object$assign = 'default' in _Object$assign ? _Object$assign['default'] : _Object$assign;

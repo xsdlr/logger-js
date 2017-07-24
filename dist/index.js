@@ -1,5 +1,5 @@
 /*
- * logger-js v0.0.1
+ * log4js-helper v0.0.2
  * (c) xsdlr
  * Released under the MIT License.
  */

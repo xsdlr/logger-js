@@ -1,6 +1,6 @@
 # Install
 ```sh
-npm i https://github.com/xsdlr/logger-js -S
+npm install log4js-helper -S
 ```
 
 # Example
