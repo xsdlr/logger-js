@@ -1,6 +1,6 @@
 {
   "name": "log4js-helper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "js logger",
   "main": "dist/index.js",
   "jsnext:main": "dist/index.es.js",

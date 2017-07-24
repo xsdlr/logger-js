@@ -6,9 +6,9 @@ npm install log4js-helper -S
 # Example
 ```javascript
 // ES6
-import Logger from 'logger-js'
+import Logger from 'log4js-helper'
 // ES5
-var Logger = require('logger-js')
+var Logger = require('log4js-helper')
 Logger.setLevel(Logger.INFO)
 Logger.info('info', 123) // info 123
 Logger.debug('debug', 123) // will not print in cosole
