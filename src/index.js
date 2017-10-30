@@ -20,7 +20,11 @@ class Logger {
    * @param level [DEBUG,INFO,WARN,ERROR,OFF]
    */
   setLevel (level) {
-    this.logLevel = Object.assign({}, this.DEBUG, level)
+    if (typeof level === 'string') {
+      this.logLevel = this[`${level.toUpperCase()}`]
+    } else {
+      this.logLevel = Object.assign({}, this.DEBUG, level)
+    }
   }
 
   /***
@@ -66,4 +70,7 @@ class Logger {
   }
 }
 
-export default new Logger()
+const logger = new Logger()
+const level = process.env.LOGGER_LEVEL
+level && logger.setLevel(level)
+export default logger

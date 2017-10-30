@@ -43,7 +43,11 @@ var Logger = function () {
   _createClass(Logger, [{
     key: 'setLevel',
     value: function setLevel(level) {
-      this.logLevel = _Object$assign({}, this.DEBUG, level);
+      if (typeof level === 'string') {
+        this.logLevel = this['' + level.toUpperCase()];
+      } else {
+        this.logLevel = _Object$assign({}, this.DEBUG, level);
+      }
     }
 
     /***
@@ -124,9 +128,11 @@ var Logger = function () {
   return Logger;
 }();
 
-var index = new Logger();
+var logger = new Logger();
+var level = process.env.LOGGER_LEVEL;
+level && logger.setLevel(level);
 
-return index;
+return logger;
 
 })));
 //# sourceMappingURL=index.umd.js.map
